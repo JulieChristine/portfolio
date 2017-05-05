@@ -11,7 +11,7 @@
 
 
 div {
-	display: block;
+	display: inline-block;
 }
 
 .navbar {
@@ -31,13 +31,13 @@ div {
 /******* NAVIGATION BAR *********/
 
 header {
-	height: 40vh;
+	height: 15vh;
 	background: rgba(2,2,2,0.9);
 	overflow: hidden;
 	position: relative;
 	opacity: 0.5;
 	h1 {
-		height: 40vh;
+		height: 25vh;
 		width: 100%;
 		position: fixed;
 		display: flex;
@@ -45,9 +45,9 @@ header {
 		align-items: flex-start;
 		justify-content: center;
 		color: white;
-		font-size: 5vw;
+		font-size: 3vw;
 		letter-spacing: 8px;
-		margin-top: 10vw;
+		margin-top: 4vw;
 		background-image: url("https://static.pexels.com/photos/163130/keyboard-black-notebook-input-163130.jpeg");
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -60,7 +60,7 @@ body {
 }
 main {
 	background: white;
-	min-height: 40vh;
+	min-height: 20vh;
 	width: 100%;
 }
 
@@ -77,6 +77,17 @@ main {
   margin: 0 auto;
   text-align: center;
 }
+
+.container div img {
+	width: 300px;
+}
+
+h2 {
+	font-size: 2.5rem;
+	color: #fff;
+}
+
+
 
 /** LINE **/
 .timeline ul li {
@@ -137,4 +148,53 @@ main {
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent #fff;
+}
+
+/** HIDE AND SHOW ELEMENTS **/
+
+.timeline ul li::after {
+  background: #fff;
+  transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: #fff;
+}
+
+.timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+  transform: translate3d(200px,0,0);
+}
+
+.timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px,0,0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+/********** SKILLS ***********/
+#skill_title {
+	margin: auto;
+}
+
+
+#skill_title h2 {
+	text-align: center;
+}
+
+#skill_list {
+	color: #fff;
+}
+
+#skill_proficiency {
+	color: #fff;
 }
